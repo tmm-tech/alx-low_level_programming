@@ -4,7 +4,7 @@
  * followed by a new line
  * Return:Always 0 (Success)
  */
-it main(void)
+int main(void)
 {
 	int ch;
 
