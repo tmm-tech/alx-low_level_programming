@@ -15,7 +15,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	it index;
+	int index;
 
 	while (*s)
 	{
@@ -27,5 +27,6 @@ char *_strpbrk(char *s, char *accept)
 
 		s++;
 	}
+	
 	return ('\0');
 }
