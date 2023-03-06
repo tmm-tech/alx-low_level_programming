@@ -1,26 +1,25 @@
 /*
- * File: 2-strchr.c
- * Auth: learner sam
+ * File: 1-memcpy.c
+ * Auth: Tony Mwangi
  */
 #include "main.h"
 
 /**
- * _strchr - Locates a character in a string.
- * @s: The string to be searched.
- * @c: The character to be located.
+ * _memcpy - Copies @n bytes from the memory area pointed
+ * to by @src into that pointedto by @dest.
+ * @dest: A pointer tothe memory area to copy @src into.
+ * @src: The source buffer to copy characters from.
+ * @n: Te number of bytes to copy from @src.
  *
- * Return: If c is found - a pointer to the first occurence.
- * if c is not found - NULL.
+ * Return: A pointer to the destination buffer @dest.
  */
-char *_strchr(char *s, char c)
+void *_memcpy(void *dest, const void *src, size_t n)
 {
-	int index;
+	unsigned int index;
+	unsigned char *destination = dest;
+	const unsigned char *source = src;
 
-	for (index = 0; s[index] >= '\0'; index++)
-	{
-		if (s[index] == c)
-			return (s + index);
-	}
-
-	return ('\0');
+	for (index = 0; index < n; index++)
+		destination[inde] = source[index];
+	return (dest);
 }
