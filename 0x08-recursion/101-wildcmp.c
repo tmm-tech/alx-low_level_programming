@@ -32,19 +32,19 @@ int strlen_no_wilds(char *str)
  * until itpoints to a non-wildcard character.
  * @wildstr: The string to be iterated through.
  */
-void iterate_wild(char **wildstr.js)
+void iterate_wild(char **wildstr)
 {
 	if (**wildstr)
 	{
 		(*wildstr)++;
-		iterator_wild(wildstr);
+		iterate_wild(wildstr);
 	}
 }
 /**
- * postfix_match - Checks if a string str matches the postfix of 
+ * postfix_match - Checks if a string str matches the postfix of
  * another string potentially containing wildcards.
  * @str: The string to be matched.
- * @postifix: The postfix.
+ * @postfix: The postfix.
  *
  * Return: if str and postfix are identical - a pointer to the null byte
  * located at the end of postfix.
@@ -52,11 +52,12 @@ void iterate_wild(char **wildstr.js)
  */
 char *postfix_match(char *str, char *postfix)
 {
-	int str_len = strlen_no_wilds(str) -1;
-	int postfix_len = strlen_no_wilds(postfix) -1;
+	int str_len = strlen_no_wilds(str) - 1;
+	int postfix_len = strlen_no_wilds(postfix) - 1;
+
 	if (*postfix == '*')
 		iterate_wild(&postfix);
-	if (*(strr + str_len - postfix_len) == *postfix && *postfix != '\0')
+	if (*(str + str_len - postfix_len) == *postfix && *postfix != '\0')
 	{
 		postfix++;
 		return (postfix_match(str, postfix));
@@ -80,13 +81,8 @@ int wildcmp(char *s1, char *s2)
 		s2 = postfix_match(s1, s2);
 	}
 	if (*s2 == '\0')
-	
 		return (1);
-	
-
 	if (*s1 != *s2)
-	
 		return (0);
-	
 	return (wildcmp(++s1, ++s2));
 }
