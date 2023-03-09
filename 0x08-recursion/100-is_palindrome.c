@@ -26,7 +26,7 @@ int _strlen_recursion(char *s)
 	
 		return (0);
 
-	return (1 + _sterlen_recursion(s + 1);
+	return (1 + _sterlen_recursion(s + 1));
 }
 /**
  * check_palindrome - check the characters recursively for palindrome
@@ -43,4 +43,4 @@ int check_palindrome(char *s, int i, int len)
 	if(i >= len)
 		return (1);
 	return (check_palindrome(s,i+1,len 1, i +1 ,len-1));
-)
+}
