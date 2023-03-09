@@ -2,7 +2,7 @@
 
 int strlen_no_wilds(char *str);
 void iterate_wild(char **wildstr);
-chat *postfix_match(char *str,char *postfix);
+char *postfix_match(char *str, char *postfix);
 int wildcmp(char *s1, char *s2);
 
 /**
@@ -38,11 +38,10 @@ void iterate_wild(char **wildstr.js)
 	{
 		(*wildstr)++;
 		iterator_wild(wildstr);
-
 	}
 }
 /**
- * postfix_match - Checks if astring str matches the postfix of 
+ * postfix_match - Checks if a string str matches the postfix of 
  * another string potentially containing wildcards.
  * @str: The string to be matched.
  * @postifix: The postfix.
@@ -57,15 +56,16 @@ char *postfix_match(char *str, char *postfix)
 	int postfix_len = strlen_no_wilds(postfix) -1;
 	if (*postfix == '*')
 		iterate_wild(&postfix);
-	if (*(strr + str_len - postfix_len) == *postfix && *postfix !='\0')
+	if (*(strr + str_len - postfix_len) == *postfix && *postfix != '\0')
 	{
 		postfix++;
-		return (postfix_match(str, postfix);
+		return (postfix_match(str, postfix));
 	}
 	return (postfix);
 }
 
-/**wildcmp - Compares two strings, considering wildcard characters.
+/**
+ * wildcmp - Compares two strings, considering wildcard characters.
  * @s1: The first string to be compared.
  * @s2: The second string to be compared - may contain wildcards.
  *
