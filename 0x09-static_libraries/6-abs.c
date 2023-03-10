@@ -1,26 +1,22 @@
 #include "main.h"
 
 /**
- * _abs - This is a absolute value
+ * _strcpy - Copiar el contenido de uno a otra variable
+ * @dest: This is destiny
+ * @src: This is the copia
  *
- * @a: This is the entry
- *
- * Return: Always 0.
+ * Return: This return copy
  */
-
-int _abs(int a)
+char *_strcpy(char *dest, char *src)
 {
-	if (a > 0)
+	char *start = dest;
+
+	while (*src != '\0')
 	{
-		return (a);
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	else if (a < 0)
-	{
-		a = a * -1;
-		return (a);
-	}
-	else
-	{
-		return (a);
-	}
+	*dest = '\0';
+	return (start);
 }
