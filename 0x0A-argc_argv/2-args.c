@@ -1,19 +1,19 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
 
 /**
- * main-Print the name of the program
- * @argc: CCount arguments
- * @argv: Arguments
- *
- * Return: Always 0 (Success)
+ * main -  print name
+ *@argc: int.
+ *@argv: char.
+ * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
-	int count = 0;
+	int i;
 
-	if (argc > 0)
+	for (i = 0 ; i < argc ; i++)
 	{
-		while (count < argc)
-		{
-			printf("%s\n", argv[count]);
+		printf("%s\n", argv[i]);
+	}
+	return (0);
+}
